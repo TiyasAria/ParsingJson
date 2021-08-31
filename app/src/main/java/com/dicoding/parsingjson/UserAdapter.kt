@@ -1,5 +1,6 @@
 package com.dicoding.parsingjson
 
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
-import com.dicoding.parsingjson.model.DataItem
+import com.dicoding.parsingjson.model.Data
 
-class UserAdapter(private val users: MutableList<DataItem>) :
+class UserAdapter(private val users: MutableList<Data>) :
     RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -19,12 +20,13 @@ class UserAdapter(private val users: MutableList<DataItem>) :
         return ListViewHolder(view)
     }
 
-    fun addUser(newUsers: DataItem) {
+    fun addUser(newUsers: Data) {
         users.add(newUsers)
         notifyItemInserted(users.lastIndex)
     }
 
     override fun getItemCount(): Int = users.size
+
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val user = users[position]
